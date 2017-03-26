@@ -19,7 +19,9 @@ LinkedList.prototype.consoleLogAll = function() {
     currentNode = currentNode.next;
   } 
 };
-LinkedList.prototype.AddToTheBeginning = function(newNode) {
+LinkedList.prototype.AddToTheBeginning = function(data) {
+
+  var newNode = new Node(data);
 
   // Reference the new item to the existing first element.
   newNode.next = this.head;
@@ -31,11 +33,11 @@ LinkedList.prototype.AddToTheBeginning = function(newNode) {
   this._length ++;
 }; 
 
-LinkedList.prototype.DeleteItem = function(node) {
+LinkedList.prototype.DeleteItem = function(data) {
 
   // 1st use-case: the item to delete is the first item 
-  if (this.head == node) {
-    this.head = node.next;
+  if (this.head.data == data) {
+    this.head = this.head.next;
     this._length--;
   }
   else{
@@ -45,8 +47,8 @@ LinkedList.prototype.DeleteItem = function(node) {
 
     //Loop to the end of the list
   	while (currentNode != null) {
-  	  if (currentNode.next == node){
-  	  	currentNode.next = node.next;
+  	  if (currentNode.next.data === data){
+  	  	currentNode.next = currentNode.next.next;
         this._length--;
   	  	return; // Exit the function when you done
   	  }
