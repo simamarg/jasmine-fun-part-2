@@ -1,4 +1,4 @@
-var LinkedList = require('../modules/LinkedList');
+var {LinkedList,Node} = require('../modules/LinkedList');
 
 describe("CreateList", function() {
   it("Should create an object with an array inside", function() {
