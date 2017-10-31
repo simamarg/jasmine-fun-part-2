@@ -91,3 +91,5 @@ LinkedList.prototype.RemoveItemByIndex = function(index) {
     this._length--;
   }
 };
+
+module.exports = {LinkedList:LinkedList,Node:Node}
